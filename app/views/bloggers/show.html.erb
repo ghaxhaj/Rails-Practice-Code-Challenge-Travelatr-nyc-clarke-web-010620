@@ -6,8 +6,10 @@ Name: <%= @blogger.name %>
 
 Total Likes: <%= @likes %>
 
+<% if @blogger.posts.length > 0 %>
 <h2> Most Liked Post </h2>
 <%= link_to @p.title, post_path(@p) %>
+<% end %>
 
 <h2> All Posts </h2>
 
