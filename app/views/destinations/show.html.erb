@@ -1,0 +1,21 @@
+<h1> Destination </h1>
+
+Name: <%= @destination.name %>
+<p>Country: <%= @destination.country %></p>
+
+<h2> Post About Destination With the Most Likes </h2>
+<%= link_to @like.title, post_path(@like) %>
+
+<h2> 5 Most Recent Posts </h2>
+<% @most.select do |m| %>
+    <%= link_to m.title, post_path(m) %><br>
+    <% end %>
+
+<h2>Posts About Destination</h2>
+<% @posts.each do |post| %>
+    <p><%= link_to post.title, post_path(post) %>
+    <% end %>
+
+<%= button_to "All Destinations", destinations_path, method: :get %>
+<%= button_to "Edit Destination", edit_destination_path, method: :get %>
+<%= button_to "Delete", destination_path, method: :delete %>

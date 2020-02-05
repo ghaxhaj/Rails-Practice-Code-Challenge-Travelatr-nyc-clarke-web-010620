@@ -1,0 +1,7 @@
+<h1> All Bloggers </h1>
+
+<% @bloggers.each do |blogger| %>
+    <%= link_to blogger.name, blogger_path(blogger) %><br>
+    <% end %>
+
+    <%= button_to "New Blogger", new_blogger_path, method: :get %>
